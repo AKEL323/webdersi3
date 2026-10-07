@@ -1,0 +1,143 @@
+/* furkan akel - 2221032048 */
+:root {
+    --no: 2221032048;
+    --ton: mod(var(--no), 360);
+    --renk-ana: hsl(var(--ton) 65% 38%);
+    --renk-zemin: hsl(var(--ton) 30% 97%);
+    --font: "system-ui", serif;
+    --bosluk-m: 1rem;
+    --kose: 8px;
+}
+
+body {
+    font-family: var(--font);
+    background-color: #0f172a; /* Görsellerdeki koyu lacivert arka plan */
+    color: #333;
+    margin: 0;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Tüm sayfaları kapsayan ana kutu */
+.container {
+    background-color: var(--renk-zemin);
+    border-radius: var(--kose);
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px; /* Telefon görünümü (öncelik) */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+header {
+    background-color: var(--renk-ana);
+    color: white;
+    padding: var(--bosluk-m);
+}
+
+header h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.4rem;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-right: 0.3rem;
+}
+
+main {
+    padding: var(--bosluk-m);
+}
+
+a {
+    color: var(--renk-ana);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --- SPRINT 2: GRID YAPISI (Tablo Yerine) --- */
+.kart-izgarasi {
+    display: grid;
+    grid-template-columns: 1fr; /* Telefonda tek sütun, taşma yok */
+    gap: var(--bosluk-m);
+    margin-top: 1rem;
+}
+
+.kart-izgarasi article {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: var(--kose);
+    padding: var(--bosluk-m);
+}
+
+.kart-izgarasi h3 { margin-top: 0; margin-bottom: 0.5rem; color: #111; }
+.kart-izgarasi p { margin: 0 0 0.5rem 0; font-size: 0.9rem; }
+
+/* --- ETKİNLİK DETAY --- */
+.detay-kapsayici {
+    display: flex;
+    flex-direction: column;
+    gap: var(--bosluk-m);
+}
+.afis-alani {
+    background-color: #cce3d3;
+    padding: 3rem 1rem;
+    text-align: center;
+    border-radius: var(--kose);
+    color: var(--renk-ana);
+}
+figure { margin: 0; }
+dl {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+dt { font-weight: bold; }
+
+/* --- FORMLAR --- */
+form p {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+label { margin-bottom: 0.2rem; font-size: 0.9rem; }
+input, select, textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+}
+/* Hatalı (boş bırakıldı) alanı kırmızı yapma */
+input:placeholder-shown { border-color: red; background-color: #fff0f0; color: red; }
+
+button {
+    background-color: var(--renk-ana);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--kose);
+    cursor: pointer;
+    font-weight: bold;
+    font-family: inherit;
+}
+
+/* --- GENİŞ EKRAN (Masaüstü) --- */
+@media (min-width: 768px) {
+    .container { max-width: 900px; }
+    
+    /* 2 Sütun (index için) */
+    .ikili-grid { grid-template-columns: repeat(2, 1fr); }
+    
+    /* 3 Sütun (etkinlikler için) */
+    .uclu-grid { grid-template-columns: repeat(3, 1fr); }
+    
+    /* Detay sayfasında afiş solda, bilgiler sağda */
+    .detay-kapsayici { flex-direction: row; align-items: stretch; }
+    .afis-alani { flex: 1; }
+    .bilgi-alani { flex: 1; }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Etkinlik Ekle</title>
+    <link rel="stylesheet" href="style/2221032048.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Etkinlik Ekle</h1>
+            <nav>
+                <a href="index.html">Ana Sayfa</a> ·
+                <a href="etkinlikler.html">Etkinlikler</a> ·
+                <a href="etkinlik-ekle.html">Ekle</a> ·
+                <a href="etkinlik-guncelle.html">Güncelle</a>
+            </nav>
+        </header>
+
+        <main>
+            <form action="#" method="post">
+                <p>
+                    <label for="etkinlik-adi">Etkinlik adı</label>
+                    <input type="text" id="etkinlik-adi" name="etkinlik_adi">
+                </p>
+                <p>
+                    <label for="kategori">Kategori</label>
+                    <select id="kategori" name="kategori">
+                        <option value="seciniz">Seçiniz ▾</option>
+                        <option value="seminer">Seminer</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="tarih">Tarih</label>
+                    <!-- Hata görünümü için placeholder kullanıldı -->
+                    <input type="text" id="tarih" name="tarih" placeholder="boş bırakıldı">
+                </p>
+                <p>
+                    <label for="aciklama">Açıklama</label>
+                    <textarea id="aciklama" name="aciklama" rows="3"></textarea>
+                </p>
+                <p>
+                    <button type="submit">Kaydet</button>
+                </p>
+            </form>
+        </main>
+    </div>
+</body>
+</html>

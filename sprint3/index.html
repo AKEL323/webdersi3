@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Kampüs Etkinlikleri</title>
+
+    <link
+        rel="stylesheet"
+        href="style/2221032048.css"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+
+        <h1>Kampüs Etkinlikleri</h1>
+
+        <nav>
+            <a href="index.html">Ana Sayfa</a> ·
+            <a href="etkinlikler.html">Etkinlikler</a> ·
+            <a href="etkinlik-ekle.html">Ekle</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <p>
+            Fakültedeki etkinlikleri tek yerden takip edin.
+        </p>
+
+        <h2>Yaklaşan 2 Etkinlik</h2>
+
+
+        <section
+            class="kart-izgarasi ikili-grid"
+        >
+
+            <div
+                id="etkinlik-listesi"
+                data-limit="2"
+            ></div>
+
+        </section>
+
+
+        <br>
+
+
+        <a href="etkinlikler.html">
+            Tüm etkinlikleri gör →
+        </a>
+
+    </main>
+
+</div>
+
+
+<script
+    type="module"
+    src="js/event-list.js"
+></script>
+
+</body>
+
+</html>
