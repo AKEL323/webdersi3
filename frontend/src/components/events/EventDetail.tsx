@@ -1,3 +1,4 @@
+
 import type { CampusEvent } from "../../types/campus-event";
 import { formatDate } from "../../utils/format-date";
 
@@ -5,18 +6,19 @@ interface EventDetailProps {
   event: CampusEvent | undefined;
   onBack: () => void;
   onEdit: (id: string) => void;
+  onDelete: () => void;
 }
 
 function EventDetail({
   event,
   onBack,
   onEdit,
+  onDelete,
 }: EventDetailProps) {
   if (!event) {
     return (
       <div className="hata">
         <p>Böyle bir etkinlik bulunamadı.</p>
-
         <button type="button" onClick={onBack}>
           Listeye dön
         </button>
@@ -69,6 +71,14 @@ function EventDetail({
             onClick={() => onEdit(event.id)}
           >
             Bu etkinliği güncelle
+          </button>
+
+          <button
+            type="button"
+            className="ikincil"
+            onClick={onDelete}
+          >
+            Etkinliği sil
           </button>
 
           <button

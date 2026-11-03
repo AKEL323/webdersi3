@@ -1,12 +1,14 @@
+
+import { Link } from "react-router-dom";
+
 import type { CampusEvent } from "../../types/campus-event";
 import { formatDate } from "../../utils/format-date";
 
 interface EventCardProps {
   event: CampusEvent;
-  onShowDetail: (id: string) => void;
 }
 
-function EventCard({ event, onShowDetail }: EventCardProps) {
+function EventCard({ event }: EventCardProps) {
   return (
     <article className="kart">
       <span className="kategori">{event.category}</span>
@@ -27,12 +29,9 @@ function EventCard({ event, onShowDetail }: EventCardProps) {
 
       <p>{event.description}</p>
 
-      <button
-        type="button"
-        onClick={() => onShowDetail(event.id)}
-      >
+      <Link to={`/etkinlik/${event.id}`}>
         Detayları gör
-      </button>
+      </Link>
     </article>
   );
 }
