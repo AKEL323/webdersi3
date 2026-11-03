@@ -103,7 +103,7 @@ Giriş, kayıt ve şifre sıfırlama formları istemci tarafında doğrulama yap
 
 ## Canlı Proje
 
-Vercel: Vercel yayın adresi buraya eklenecektir.
+Vercel: https://furkanakel-frontend.vercel.app
 
 ## GitHub
 
